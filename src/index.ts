@@ -48,14 +48,6 @@ app.use(async (ctx, next) => {
   }
 })
 
-app.use(async (ctx, next) => {
-  Logger.info(`${ctx.request.method} ${ctx.request.path}`, {
-    method: ctx.request.method,
-    path: ctx.request.path,
-  });
-  await next();
-});
-
 const BaseRouter = new Router();
 
 BaseRouter.use(CommunityMembersRouter.routes());
